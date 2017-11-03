@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour {
 
+	public static bool dragging = false;
 	private GameObject drag = null;
 	void OnMouseDown()
 	{
@@ -14,11 +15,13 @@ public class Draggable : MonoBehaviour {
 	}
 	void OnMouseDrag()
 	{
+		dragging = true;
 		MoveDragToCursor();
 	}
 
 	void OnMouseUp()
 	{
+		dragging = false;
 		Object.Destroy(drag);		
 	}
 
