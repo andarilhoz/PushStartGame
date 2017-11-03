@@ -9,7 +9,6 @@ public class Draggable : MonoBehaviour {
 	{
 		if(drag == null){
 			drag = CreateDragObject();
-			Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			MoveDragToCursor();
 		}
 	}
