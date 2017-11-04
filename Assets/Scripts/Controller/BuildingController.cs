@@ -8,14 +8,11 @@ public class BuildingController : MonoBehaviour {
 
 	public GameObject coin;
 
-	private BuildingType type;
 	private GameController gameController;
 
 	void Awake()
 	{
 		gameController = GameObject.Find("GameController").GetComponent<GameController>();
-		type = (BuildingType) System.Enum.Parse (typeof (BuildingType), transform.name);
-		building = gameController.availableBuildings.Find(building => building.type == type);
 	}
 
 	void Start () {

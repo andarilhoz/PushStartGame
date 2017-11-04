@@ -373,7 +373,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335887076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4471016, y: -110.5, z: 0.53314}
+  m_LocalPosition: {x: -1.4471016, y: -90.09375, z: 0.53314}
   m_LocalScale: {x: 0.6702451, y: 0.6702451, z: 0.6702451}
   m_Children:
   - {fileID: 918933147}
@@ -476,27 +476,32 @@ MonoBehaviour:
   nickname: {fileID: 1294204592}
   money: {fileID: 1487629203}
   availableBuildings:
-  - type: 0
+  - prefab: {fileID: 1734360697653410, guid: 828fd4637f425bd40ad2840d1177f38b, type: 2}
+    type: 0
     timeToBuild: 5
     moneyPerTime: 1
     price: 1
     timeToProfit: 1
-  - type: 1
+  - prefab: {fileID: 1478013789366908, guid: d9c0aea954ec25f4f9cc16edd25c1625, type: 2}
+    type: 1
     timeToBuild: 10
     moneyPerTime: 5
     price: 3
     timeToProfit: 5
-  - type: 2
+  - prefab: {fileID: 1067023807281786, guid: c4de10ff86f151e4893fa8abc5f677f0, type: 2}
+    type: 2
     timeToBuild: 20
     moneyPerTime: 10
     price: 10
     timeToProfit: 10
-  - type: 3
+  - prefab: {fileID: 1233863012201010, guid: 6fb377c37a929954ead47f13515d39f2, type: 2}
+    type: 3
     timeToBuild: 60
     moneyPerTime: 50
     price: 100
     timeToProfit: 30
-  - type: 4
+  - prefab: {fileID: 1561689388391030, guid: 73f6029c6f9db3242b909dad6d58a279, type: 2}
+    type: 4
     timeToBuild: 120
     moneyPerTime: 100
     price: 250
@@ -584,7 +589,7 @@ RectTransform:
   m_GameObject: {fileID: 572164119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 0.017574692, y: 0.017574692, z: 0.017574692}
+  m_LocalScale: {x: 0.01893267, y: 0.01893267, z: 0.01893267}
   m_Children:
   - {fileID: 1627651199}
   - {fileID: 1294204591}
@@ -888,6 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548623248a399a4eac2dab93579f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drag: {fileID: 0}
 --- !u!114 &918933151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,6 +906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  canConstruct: 1
 --- !u!1 &934713990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548623248a399a4eac2dab93579f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drag: {fileID: 0}
 --- !u!61 &1053832419
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1253,6 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  canConstruct: 1
 --- !u!1 &1071886374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548623248a399a4eac2dab93579f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drag: {fileID: 0}
 --- !u!61 &1071886378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1378,6 +1388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  canConstruct: 1
 --- !u!1 &1096390913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1503,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1294204590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -278.33334, y: 260.5, z: 0}
+  m_LocalPosition: {x: -368.5, y: 240.09375, z: 0}
   m_LocalScale: {x: 1.0811998, y: 1.0811998, z: 1.0811998}
   m_Children: []
   m_Father: {fileID: 572164123}
@@ -2220,7 +2231,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627651198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -304.99634, y: 184.6, z: 0}
+  m_LocalPosition: {x: -395.163, y: 164.19376, z: 0}
   m_LocalScale: {x: 0.5752876, y: 0.57528734, z: 0.57528734}
   m_Children:
   - {fileID: 1633022200}
@@ -2741,7 +2752,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935123493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 282.33334, y: 240.9, z: 0}
+  m_LocalPosition: {x: 372.5, y: 220.49374, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1335571400}
@@ -3169,6 +3180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548623248a399a4eac2dab93579f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drag: {fileID: 0}
 --- !u!61 &2060546772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3206,6 +3218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  canConstruct: 1
 --- !u!1 &2086570095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,6 +3307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548623248a399a4eac2dab93579f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drag: {fileID: 0}
 --- !u!61 &2086570099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3331,3 +3345,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  canConstruct: 1

@@ -6,33 +6,37 @@ public class ConstructBuilder : MonoBehaviour {
 	public GameObject coinPrefab;
 	private GameObject buildingSpace;
 
+	private Draggable draggable;
+
+	public bool canConstruct = true;
+	private GameController gameController;
+
 	void Start()
 	{
+		gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		buildingSpace = GameObject.Find("BuildingSpace");
+		draggable = transform.GetComponent<Draggable>();
 	}
 
-	void OnMouseUp()
-	{
-		ConstructBuilding();
+	void OnMouseUp(){
+		canConstruct = draggable.drag != null && draggable.drag.GetComponent<DraggableController>().canConstruct;
+		if(canConstruct){
+			ConstructBuilding();
+		}
+		Object.Destroy(draggable.drag);	
 	}
 
-	void ConstructBuilding(){
-		GameObject building = new GameObject(transform.name);
-		building.AddComponent<SpriteRenderer>();
-		building.AddComponent<BuildingController>();
-		BuildingController buildScript =  building.GetComponent<BuildingController>();
-		SpriteRenderer render = building.GetComponent<SpriteRenderer>();
-		SpriteRenderer myRender = transform.GetComponent<SpriteRenderer>();
-
-		buildScript.coin = coinPrefab;
+	void ConstructBuilding(){	
 
 		Vector3 buildingPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		buildingPos.z = -1;	
-
 		
-		render.sprite = myRender.sprite;
+		BuildingType type = (BuildingType) System.Enum.Parse (typeof (BuildingType), transform.name);
+		GameObject buildingPrefab = gameController.availableBuildings.Find(build => build.type == type).prefab;
+		GameObject building = GameObject.Instantiate(buildingPrefab, buildingPos, transform.rotation);
 		building.transform.localScale = transform.lossyScale;
 		building.transform.parent = buildingSpace.transform;
 		building.transform.localPosition = buildingPos;
+
 	}
 }

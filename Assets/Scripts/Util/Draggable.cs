@@ -5,7 +5,8 @@ using UnityEngine;
 public class Draggable : MonoBehaviour {
 
 	public static bool dragging = false;
-	private GameObject drag = null;
+	public GameObject drag = null;
+
 	void OnMouseDown()
 	{
 		if(drag == null){
@@ -22,15 +23,19 @@ public class Draggable : MonoBehaviour {
 	void OnMouseUp()
 	{
 		dragging = false;
-		Object.Destroy(drag);		
 	}
 
 	GameObject CreateDragObject(){
 		GameObject dragable = new GameObject("Drag");
-		dragable.AddComponent<SpriteRenderer>();
-		SpriteRenderer render = dragable.GetComponent<SpriteRenderer>();
+		
+		SpriteRenderer render = dragable.AddComponent<SpriteRenderer>();
+		BoxCollider2D collider  = dragable.AddComponent<BoxCollider2D>(); 
 		SpriteRenderer myRender = transform.GetComponent<SpriteRenderer>();
+		dragable.AddComponent<DraggableController>();
 
+		collider.isTrigger = true;
+		collider.size = new Vector2(2.5f, 2.5f);
+		
 		render.sprite = myRender.sprite;
 		dragable.transform.localScale = transform.lossyScale;
 		return dragable;
