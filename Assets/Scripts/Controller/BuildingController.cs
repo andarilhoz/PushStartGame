@@ -29,12 +29,12 @@ public class BuildingController : MonoBehaviour {
 	
 	
 	IEnumerator EarnMoney () {
-		yield return new WaitForSeconds(building.timeToProfit);
 		if(active){
 			GameObject coinInstance = GameObject.Instantiate(coin,transform.position,transform.rotation);
 			coinInstance.GetComponent<CoinController>().value = building.moneyPerTime;
 			coinInstance.GetComponent<CoinController>().gameController = gameController;
 		}
+		yield return new WaitForSeconds(building.timeToProfit);
 		StartCoroutine(EarnMoney());
 	}
 

@@ -58,7 +58,7 @@ public class CameraController : MonoBehaviour {
 		pos.z = -10;
 		return pos;
 	}
-	void CalculateBonds()
+	public void CalculateBonds()
 	{
 		float vertExtent = Camera.main.GetComponent<Camera>().orthographicSize;  
 		float horzExtent = vertExtent * Screen.width / Screen.height;
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour {
 		leftBound = (float)(horzExtent - spriteBounds.sprite.bounds.size.x * spriteBounds.transform.localScale.x / 2.0f) ;
 		rightBound = (float)(spriteBounds.sprite.bounds.size.x * spriteBounds.transform.localScale.x / 2.0f - horzExtent) ;
 		bottomBound = (float)(vertExtent - spriteBounds.sprite.bounds.size.y * spriteBounds.transform.localScale.y / 2.0f) ;
-
+		transform.position = PosCorrectionLimit(transform.position);
 	}
  
 }
