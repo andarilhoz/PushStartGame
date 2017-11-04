@@ -373,7 +373,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335887076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4471016, y: -90.09375, z: 0.53314}
+  m_LocalPosition: {x: -1.4471016, y: -110.5, z: 0.53314}
   m_LocalScale: {x: 0.6702451, y: 0.6702451, z: 0.6702451}
   m_Children:
   - {fileID: 918933147}
@@ -589,7 +589,7 @@ RectTransform:
   m_GameObject: {fileID: 572164119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 0.01893267, y: 0.01893267, z: 0.01893267}
+  m_LocalScale: {x: 0.017574692, y: 0.017574692, z: 0.017574692}
   m_Children:
   - {fileID: 1627651199}
   - {fileID: 1294204591}
@@ -894,6 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drag: {fileID: 0}
+  canDrag: 1
 --- !u!114 &918933151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,6 +907,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  enableColor: {r: 1, g: 1, b: 1, a: 1}
+  disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   canConstruct: 1
 --- !u!1 &934713990
 GameObject:
@@ -989,7 +992,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 934713990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90.22329}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 0.01893267, y: 0.01893267, z: 0.01893267}
   m_Children:
   - {fileID: 1811651878}
@@ -1224,6 +1227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drag: {fileID: 0}
+  canDrag: 1
 --- !u!61 &1053832419
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1261,6 +1265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  enableColor: {r: 1, g: 1, b: 1, a: 1}
+  disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   canConstruct: 1
 --- !u!1 &1071886374
 GameObject:
@@ -1351,6 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drag: {fileID: 0}
+  canDrag: 1
 --- !u!61 &1071886378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1388,6 +1395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  enableColor: {r: 1, g: 1, b: 1, a: 1}
+  disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   canConstruct: 1
 --- !u!1 &1096390913
 GameObject:
@@ -1503,7 +1512,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1294204590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -368.5, y: 240.09375, z: 0}
+  m_LocalPosition: {x: -404.77777, y: 260.5, z: 0}
   m_LocalScale: {x: 1.0811998, y: 1.0811998, z: 1.0811998}
   m_Children: []
   m_Father: {fileID: 572164123}
@@ -2200,7 +2209,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e2d216f230e8f5749b95cbb74d7a6aca, type: 3}
-  m_Color: {r: 0.3789464, g: 0.33520764, b: 0.9117647, a: 1}
+  m_Color: {r: 0.33520764, g: 0.9117647, b: 0.4107566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2231,7 +2240,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627651198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -395.163, y: 164.19376, z: 0}
+  m_LocalPosition: {x: -431.44077, y: 184.6, z: 0}
   m_LocalScale: {x: 0.5752876, y: 0.57528734, z: 0.57528734}
   m_Children:
   - {fileID: 1633022200}
@@ -2752,7 +2761,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935123493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 372.5, y: 220.49374, z: 0}
+  m_LocalPosition: {x: 408.77777, y: 240.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1335571400}
@@ -3181,6 +3190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drag: {fileID: 0}
+  canDrag: 1
 --- !u!61 &2060546772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3218,6 +3228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  enableColor: {r: 1, g: 1, b: 1, a: 1}
+  disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   canConstruct: 1
 --- !u!1 &2086570095
 GameObject:
@@ -3308,6 +3320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drag: {fileID: 0}
+  canDrag: 1
 --- !u!61 &2086570099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3345,4 +3358,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  enableColor: {r: 1, g: 1, b: 1, a: 1}
+  disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   canConstruct: 1

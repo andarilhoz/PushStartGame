@@ -7,9 +7,11 @@ public class Draggable : MonoBehaviour {
 	public static bool dragging = false;
 	public GameObject drag = null;
 
+	public bool canDrag = true;
+
 	void OnMouseDown()
 	{
-		if(drag == null){
+		if(drag == null && canDrag){
 			drag = CreateDragObject();
 			MoveDragToCursor();
 		}
@@ -17,6 +19,7 @@ public class Draggable : MonoBehaviour {
 	void OnMouseDrag()
 	{
 		dragging = true;
+		if(!canDrag) return;
 		MoveDragToCursor();
 	}
 

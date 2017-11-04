@@ -108,6 +108,8 @@ MonoBehaviour:
     timeToProfit: 1
   active: 1
   coin: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
+  constructingColor: {r: 0.53676474, g: 0.53676474, b: 0.53676474, a: 1}
+  readyColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &212391141559219422
 SpriteRenderer:
   m_ObjectHideFlags: 1

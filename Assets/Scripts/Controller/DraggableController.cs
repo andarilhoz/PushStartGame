@@ -9,14 +9,12 @@ public class DraggableController : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other)
 	{
 		if(!canConstruct || other.tag != "Building") return;
-		Debug.Log("colidiu");
 		canConstruct = false;
 	}
 
 	void OnTriggerExit2D(Collider2D other)
 	{
 		if(other.tag != "Building") return;
-		Debug.Log("n colide mais");
 		canConstruct = true;
 	}
 

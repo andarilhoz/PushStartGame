@@ -10,12 +10,18 @@ public class BuildingController : MonoBehaviour {
 
 	private GameController gameController;
 
+	private SpriteRenderer buildRenderer;
+	public Color constructingColor;
+	public Color readyColor;
+
 	void Awake()
 	{
 		gameController = GameObject.Find("GameController").GetComponent<GameController>();
+		buildRenderer = transform.GetComponent<SpriteRenderer>();
 	}
 
 	void Start () {
+		buildRenderer.color = constructingColor;
 		StartCoroutine(BuildingIt());
 	}
 	
@@ -33,6 +39,7 @@ public class BuildingController : MonoBehaviour {
 
 	IEnumerator BuildingIt(){
 		yield return new WaitForSeconds(building.timeToBuild);
+		buildRenderer.color = readyColor;
 		active = true;
 		StartCoroutine(EarnMoney());
 	}

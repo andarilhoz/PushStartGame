@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour {
 	private GameState gameState;
 	private User loggedUser;
 
+	public delegate void loggedUserEvent();
+	public static event loggedUserEvent onLoggedUserChange;
+
 	void Start()
 	{
 		gameState = transform.GetComponent<GameState>();
@@ -37,18 +40,24 @@ public class GameController : MonoBehaviour {
 
 	public void SetUser(User user){
 		loggedUser = user;
-		money.text = user.money.ToString();
-		nickname.text = loggedUser.nickname;
+		ChangeUser();
 	}
 
 	public void AddMoney(int moneyEarned){
 		loggedUser.money += moneyEarned;
-		money.text = loggedUser.money.ToString();
+		ChangeUser();
 	}
 
 	public void SpendMoney(int moneySpended){
 		loggedUser.money -= moneySpended;
+		ChangeUser();
+	}
+
+	public void ChangeUser(){
+		if(onLoggedUserChange != null)
+			onLoggedUserChange();
 		money.text = loggedUser.money.ToString();
+		nickname.text = loggedUser.nickname;
 	}
 
 	public float GetMoney(){
