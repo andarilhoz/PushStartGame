@@ -27,13 +27,17 @@ public class ConstructBuilder : MonoBehaviour {
 	}
 
 	void ConstructBuilding(){	
+		BuildingType type = (BuildingType) System.Enum.Parse (typeof (BuildingType), transform.name);
+		Building buildingEntity = gameController.availableBuildings.Find(build => build.type == type);
 
+		if(gameController.GetMoney() < buildingEntity.price) return;
+		
+		gameController.SpendMoney(buildingEntity.price);
+		
 		Vector3 buildingPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		buildingPos.z = -1;	
-		
-		BuildingType type = (BuildingType) System.Enum.Parse (typeof (BuildingType), transform.name);
-		GameObject buildingPrefab = gameController.availableBuildings.Find(build => build.type == type).prefab;
-		GameObject building = GameObject.Instantiate(buildingPrefab, buildingPos, transform.rotation);
+
+		GameObject building = GameObject.Instantiate(buildingEntity.prefab, buildingPos, transform.rotation);
 		building.transform.localScale = transform.lossyScale;
 		building.transform.parent = buildingSpace.transform;
 		building.transform.localPosition = buildingPos;

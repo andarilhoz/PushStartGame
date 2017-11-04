@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour {
 		gameState = transform.GetComponent<GameState>();
 		User dummyUser = new User();
 		dummyUser.nickname = "Goku";
-		dummyUser.money = 0;
+		dummyUser.money = 250;
 		SetUser(dummyUser);
 	}
 
@@ -44,5 +44,14 @@ public class GameController : MonoBehaviour {
 	public void AddMoney(int moneyEarned){
 		loggedUser.money += moneyEarned;
 		money.text = loggedUser.money.ToString();
+	}
+
+	public void SpendMoney(int moneySpended){
+		loggedUser.money -= moneySpended;
+		money.text = loggedUser.money.ToString();
+	}
+
+	public float GetMoney(){
+		return loggedUser.money;
 	}
 }
