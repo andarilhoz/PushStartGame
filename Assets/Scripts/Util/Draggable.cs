@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Draggable : MonoBehaviour {
-
 	public static bool dragging = false;
 	public GameObject drag = null;
 

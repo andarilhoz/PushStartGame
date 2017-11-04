@@ -7,17 +7,14 @@ public class ConstructBuilder : MonoBehaviour {
 	public Color enableColor;
 	public Color disableColor;
 
+
 	private GameObject buildingSpace;
-
 	private Draggable draggable;
-
-	public bool canConstruct = true;
 	private GameController gameController;
-
 	private BuildingType type;
 	private Building buildingEntity;
-
 	private SpriteRenderer spriteRenderer;
+	public bool canConstruct = true;
 
 	void Start()
 	{
@@ -39,8 +36,6 @@ public class ConstructBuilder : MonoBehaviour {
 	}
 
 	void ConstructBuilding(){	
-
-
 		if(gameController.GetMoney() < buildingEntity.price) return;
 
 		gameController.SpendMoney(buildingEntity.price);
@@ -51,7 +46,6 @@ public class ConstructBuilder : MonoBehaviour {
 		
 		building.transform.parent = buildingSpace.transform;
 		building.transform.localPosition = buildingPos;
-
 	}
 
 	void ShowMeTheMoney(){

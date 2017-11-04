@@ -5,15 +5,14 @@ using UnityEngine;
 public class BuildingController : MonoBehaviour {
 	public Building building;
 	public bool active;
-
 	public GameObject coin;
 
-	private GameController gameController;
-
-	private SpriteRenderer buildRenderer;
 	public Color constructingColor;
 	public Color readyColor;
 
+
+	private GameController gameController;
+	private SpriteRenderer buildRenderer;
 	private Animator animator;
 
 	void Awake()

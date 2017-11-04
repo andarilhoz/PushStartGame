@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour {
 	public List<Building> availableBuildings;
 	
 
-
 	private GameState gameState;
 	private User loggedUser;
 
