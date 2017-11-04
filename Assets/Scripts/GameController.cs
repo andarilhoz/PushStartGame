@@ -2,63 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GameState))]
 public class GameController : MonoBehaviour {
-
-	public enum State  {
-		Login,
-		Game,
-		Pause,
-	};
-
-	private State state;
 	
+	private GameState gameState;
 
-	IEnumerator GameState() {
-		Debug.Log("Game: Enter");
-		while(state == State.Game) {
-			yield return 0;
-		}
-		Debug.Log("Game: Exited");
-		NextState();
+	void Start()
+	{
+		gameState = transform.GetComponent<GameState>();
 	}
 
-	IEnumerator LoginState() {
-		Debug.Log("Login: Enter");
-		while(state == State.Login) {
-			yield return 0;
-		}
-		Debug.Log("Login: Exited");
-		NextState();
+	public void PauseGame(){
+		gameState.changeState(GameState.State.Pause);
 	}
 
-	IEnumerator PauseState() {
-		Debug.Log("Pause: Enter");
-		while(state == State.Pause) {
-			yield return 0;
-		}
-		Debug.Log("Pause: Exited");
-		NextState();
-	}
-
-	
-	void NextState() {
-		string methodName = state.ToString() + "State";
-		System.Reflection.MethodInfo info = 
-			GetType().GetMethod(methodName,
-								System.Reflection.BindingFlags.NonPublic |
-								System.Reflection.BindingFlags.Instance);
-			StartCoroutine((IEnumerator)info.Invoke(this,null));
-	}
-
-	public void changeState(State state){
-		this.state = state;
-	}
-
-	public State getState(){
-		return this.state;
-	}
-
-	void Start () {
-		NextState();
+	public void PlayGame(){
+		gameState.changeState(GameState.State.Play);
 	}
 }
