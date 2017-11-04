@@ -6,6 +6,8 @@ public class BuildingController : MonoBehaviour {
 	public Building building;
 	public bool active;
 
+	public GameObject coin;
+
 	private BuildingType type;
 	private GameController gameController;
 
@@ -23,8 +25,11 @@ public class BuildingController : MonoBehaviour {
 	
 	IEnumerator EarnMoney () {
 		yield return new WaitForSeconds(building.timeToProfit);
-		if(active)
-			gameController.AddMoney(building.moneyPerTime);
+		if(active){
+			GameObject coinInstance = GameObject.Instantiate(coin,transform.position,transform.rotation);
+			coinInstance.GetComponent<CoinController>().value = building.moneyPerTime;
+			coinInstance.GetComponent<CoinController>().gameController = gameController;
+		}
 		StartCoroutine(EarnMoney());
 	}
 

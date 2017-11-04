@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ConstructBuilder : MonoBehaviour {
+	public GameObject coinPrefab;
 	private GameObject buildingSpace;
 
 	void Start()
@@ -19,10 +20,11 @@ public class ConstructBuilder : MonoBehaviour {
 		GameObject building = new GameObject(transform.name);
 		building.AddComponent<SpriteRenderer>();
 		building.AddComponent<BuildingController>();
+		BuildingController buildScript =  building.GetComponent<BuildingController>();
 		SpriteRenderer render = building.GetComponent<SpriteRenderer>();
 		SpriteRenderer myRender = transform.GetComponent<SpriteRenderer>();
 
-		
+		buildScript.coin = coinPrefab;
 
 		Vector3 buildingPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		buildingPos.z = -1;	
