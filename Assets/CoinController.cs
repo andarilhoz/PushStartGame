@@ -19,11 +19,13 @@ public class CoinController : MonoBehaviour {
 	void Update () {
 		Vector3 direction = (target.transform.position - transform.position).normalized;
 		rg2d.MovePosition(transform.position + direction * speed * Time.deltaTime);
+		bool visibleByCamera = transform.GetComponent<SpriteRenderer>().IsVisibleFrom(Camera.main);
+		if(!visibleByCamera)
+			ReachTarget();		
 		StartCoroutine(LifeTimeOut());
 	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log("Achou");
 		if(other.transform == target.transform)
 			ReachTarget();
 	}
