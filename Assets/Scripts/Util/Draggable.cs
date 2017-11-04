@@ -7,7 +7,12 @@ public class Draggable : MonoBehaviour {
 	public static bool dragging = false;
 	public GameObject drag = null;
 
+	private GameController gameController;
 	public bool canDrag = true;
+
+	void Start(){
+		gameController = GameObject.Find("GameController").GetComponent<GameController>();
+	}
 
 	void OnMouseDown()
 	{
@@ -30,6 +35,8 @@ public class Draggable : MonoBehaviour {
 
 	GameObject CreateDragObject(){
 		GameObject dragable = new GameObject("Drag");
+		BuildingType type = (BuildingType) System.Enum.Parse (typeof (BuildingType), transform.name);
+		Building buildType = gameController.availableBuildings.Find(build => build.type == type);
 		
 		SpriteRenderer render = dragable.AddComponent<SpriteRenderer>();
 		BoxCollider2D collider  = dragable.AddComponent<BoxCollider2D>(); 
@@ -40,7 +47,7 @@ public class Draggable : MonoBehaviour {
 		collider.size = new Vector2(2.5f, 2.5f);
 		
 		render.sprite = myRender.sprite;
-		dragable.transform.localScale = transform.lossyScale;
+		dragable.transform.localScale = buildType.prefab.transform.lossyScale;
 		return dragable;
 	}
 

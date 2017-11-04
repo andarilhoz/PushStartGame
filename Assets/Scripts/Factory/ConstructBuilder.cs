@@ -47,9 +47,8 @@ public class ConstructBuilder : MonoBehaviour {
 		
 		Vector3 buildingPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		buildingPos.z = -1;	
-
 		GameObject building = GameObject.Instantiate(buildingEntity.prefab, buildingPos, transform.rotation);
-		building.transform.localScale = transform.lossyScale;
+		
 		building.transform.parent = buildingSpace.transform;
 		building.transform.localPosition = buildingPos;
 
