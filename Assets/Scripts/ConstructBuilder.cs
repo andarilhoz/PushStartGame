@@ -7,7 +7,7 @@ public class ConstructBuilder : MonoBehaviour {
 
 	void Start()
 	{
-		buildingSpace = GameObject.Find("Buildings");
+		buildingSpace = GameObject.Find("BuildingSpace");
 	}
 
 	void OnMouseUp()
@@ -16,8 +16,9 @@ public class ConstructBuilder : MonoBehaviour {
 	}
 
 	void ConstructBuilding(){
-		GameObject building = new GameObject(transform.name + " constructed");
+		GameObject building = new GameObject(transform.name);
 		building.AddComponent<SpriteRenderer>();
+		building.AddComponent<BuildingController>();
 		SpriteRenderer render = building.GetComponent<SpriteRenderer>();
 		SpriteRenderer myRender = transform.GetComponent<SpriteRenderer>();
 

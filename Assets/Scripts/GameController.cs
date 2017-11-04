@@ -8,13 +8,20 @@ public class GameController : MonoBehaviour {
 
 	public Text nickname;
 	public Text money;
+	public List<Building> availableBuildings;
 	
+
+
 	private GameState gameState;
 	private User loggedUser;
 
 	void Start()
 	{
 		gameState = transform.GetComponent<GameState>();
+		User dummyUser = new User();
+		dummyUser.nickname = "Goku";
+		dummyUser.money = 0;
+		SetUser(dummyUser);
 	}
 
 	public void PauseGame(){
@@ -29,5 +36,10 @@ public class GameController : MonoBehaviour {
 		loggedUser = user;
 		money.text = user.money.ToString();
 		nickname.text = loggedUser.nickname;
+	}
+
+	public void AddMoney(int moneyEarned){
+		loggedUser.money += moneyEarned;
+		money.text = loggedUser.money.ToString();
 	}
 }

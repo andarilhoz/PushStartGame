@@ -475,6 +475,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickname: {fileID: 1294204592}
   money: {fileID: 1487629203}
+  availableBuildings:
+  - type: 0
+    timeToBuild: 5
+    moneyPerTime: 1
+    price: 1
+    timeToProfit: 1
+  - type: 1
+    timeToBuild: 10
+    moneyPerTime: 5
+    price: 3
+    timeToProfit: 5
+  - type: 2
+    timeToBuild: 20
+    moneyPerTime: 10
+    price: 10
+    timeToProfit: 10
+  - type: 3
+    timeToBuild: 60
+    moneyPerTime: 50
+    price: 100
+    timeToProfit: 30
+  - type: 4
+    timeToBuild: 120
+    moneyPerTime: 100
+    price: 250
+    timeToProfit: 60
 --- !u!1 &572164119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,7 +1446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115494674}
   m_Layer: 0
-  m_Name: Buildings
+  m_Name: BuildingSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
