@@ -24,8 +24,11 @@ public class GameController : MonoBehaviour {
 		SetUser(dummyUser);
 	}
 
-	public void PauseGame(){
-		gameState.changeState(GameState.State.Pause);
+	public void TogglePause(){
+		if(gameState.getState() != GameState.State.Pause)
+			gameState.changeState(GameState.State.Pause);
+		else
+			gameState.changeState(GameState.State.Play);
 	}
 
 	public void PlayGame(){

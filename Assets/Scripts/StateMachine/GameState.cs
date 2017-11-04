@@ -33,16 +33,17 @@ public class GameState : MonoBehaviour {
 		while(state == State.Play) {
 			yield return 0;
 		}
-		game.SetActive(false);
 		Debug.Log("Play: Exited");
 		NextState();
 	}
 
 	IEnumerator PauseState() {
 		Debug.Log("Pause: Enter");
+		Time.timeScale = 0;
 		while(state == State.Pause) {
 			yield return 0;
 		}
+		Time.timeScale = 1;
 		Debug.Log("Pause: Exited");
 		NextState();
 	}
