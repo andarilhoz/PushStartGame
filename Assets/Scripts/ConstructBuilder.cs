@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ConstructBuilder : MonoBehaviour {
+	private GameObject buildingSpace;
 
+	void Start()
+	{
+		buildingSpace = GameObject.Find("Buildings");
+	}
 
 	void OnMouseUp()
 	{
@@ -19,10 +24,12 @@ public class ConstructBuilder : MonoBehaviour {
 		
 
 		Vector3 buildingPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		buildingPos.z = 0;
+		buildingPos.z = -1;	
 
-		building.transform.position = buildingPos;
+		
 		render.sprite = myRender.sprite;
 		building.transform.localScale = transform.lossyScale;
+		building.transform.parent = buildingSpace.transform;
+		building.transform.localPosition = buildingPos;
 	}
 }

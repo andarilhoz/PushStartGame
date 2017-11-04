@@ -37,7 +37,8 @@ public class Draggable : MonoBehaviour {
 	}
 
 	void MoveDragToCursor(){
-		Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		pos.z = 1;
 		drag.transform.position = pos;
 	}
 }
