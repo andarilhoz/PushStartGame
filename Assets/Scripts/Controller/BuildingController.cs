@@ -14,10 +14,13 @@ public class BuildingController : MonoBehaviour {
 	public Color constructingColor;
 	public Color readyColor;
 
+	private Animator animator;
+
 	void Awake()
 	{
 		gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		buildRenderer = transform.GetComponent<SpriteRenderer>();
+		animator = transform.GetComponent<Animator>();
 	}
 
 	void Start () {
@@ -40,6 +43,7 @@ public class BuildingController : MonoBehaviour {
 	IEnumerator BuildingIt(){
 		yield return new WaitForSeconds(building.timeToBuild);
 		buildRenderer.color = readyColor;
+		animator.SetTrigger("Complete");
 		active = true;
 		StartCoroutine(EarnMoney());
 	}
