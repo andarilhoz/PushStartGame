@@ -26,6 +26,7 @@ public class CameraController : MonoBehaviour {
     void Update()
     {
 		if(Draggable.dragging) return;
+		if(Input.touchCount == 2) return;
 
 		if(!resolution.Equals(Screen.currentResolution)){
 			CalculateBonds();

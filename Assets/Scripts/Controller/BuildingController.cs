@@ -76,4 +76,12 @@ public class BuildingController : MonoBehaviour {
 		StartCoroutine(EarnMoney());
 	}
 
+	public void StopAudio(){
+		audioSource.Stop();
+	}
+
+	public void PlayAudio(){
+		if(!active)
+			audioSource.Play();
+	}
 }

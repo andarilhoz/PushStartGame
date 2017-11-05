@@ -40,10 +40,12 @@ public class GameState : MonoBehaviour {
 	IEnumerator PauseState() {
 		Debug.Log("Pause: Enter");
 		Time.timeScale = 0;
+		AudioController.StopAllBuildingAudio();
 		while(state == State.Pause) {
 			yield return 0;
 		}
 		Time.timeScale = 1;
+		AudioController.PlayAllBuildingAudio();
 		Debug.Log("Pause: Exited");
 		NextState();
 	}
