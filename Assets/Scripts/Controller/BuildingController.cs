@@ -10,6 +10,9 @@ public class BuildingController : MonoBehaviour {
 	public Color constructingColor;
 	public Color readyColor;
 
+	public AudioSource audioSource;
+	public AudioClip buildingSound;
+	public AudioClip moneySound;
 
 	private GameController gameController;
 	private SpriteRenderer buildRenderer;
@@ -20,6 +23,7 @@ public class BuildingController : MonoBehaviour {
 		gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		buildRenderer = transform.GetComponent<SpriteRenderer>();
 		animator = transform.GetComponent<Animator>();
+		audioSource = transform.GetComponent<AudioSource>();
 	}
 
 	void Start () {
@@ -34,13 +38,17 @@ public class BuildingController : MonoBehaviour {
 			coinInstance.GetComponent<CoinController>().value = building.moneyPerTime;
 			coinInstance.GetComponent<CoinController>().gameController = gameController;
 		}
+		audioSource.PlayOneShot(moneySound);
 		yield return new WaitForSeconds(building.timeToProfit);
 		StartCoroutine(EarnMoney());
 	}
 
 
 	IEnumerator BuildingIt(){
+		audioSource.clip = buildingSound;
+		audioSource.Play();
 		yield return new WaitForSeconds(building.timeToBuild);
+		audioSource.Stop();
 		buildRenderer.color = readyColor;
 		animator.SetTrigger("Complete");
 		active = true;

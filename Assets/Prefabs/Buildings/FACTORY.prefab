@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61131207827139008}
   - component: {fileID: 50705929057898954}
   - component: {fileID: 95966945655561224}
+  - component: {fileID: 82611772697523318}
   m_Layer: 0
   m_Name: FACTORY
   m_TagString: Building
@@ -89,6 +90,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
+--- !u!82 &82611772697523318
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1734360697653410}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95966945655561224
 Animator:
   serializedVersion: 3
@@ -128,6 +209,9 @@ MonoBehaviour:
   coin: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
   constructingColor: {r: 0.53676474, g: 0.53676474, b: 0.53676474, a: 1}
   readyColor: {r: 1, g: 1, b: 1, a: 1}
+  audioSource: {fileID: 0}
+  buildingSound: {fileID: 8300000, guid: 8bb981571ae6569458118689bf05425e, type: 3}
+  moneySound: {fileID: 8300000, guid: 9ae0f9e6a00aa6c4583fd1fa593a8f91, type: 3}
 --- !u!212 &212391141559219422
 SpriteRenderer:
   m_ObjectHideFlags: 1
