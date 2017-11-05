@@ -12,6 +12,7 @@ public class LoginController : MonoBehaviour {
 	public InputField username;
 	public InputField password;
 	public int maxAttemptsToConnect = 2;
+	public LoginErrorFeedbackController errorFeedback;
 
 
 	private GameController gameController;
@@ -22,6 +23,7 @@ public class LoginController : MonoBehaviour {
 	void Start()
 	{
 		gameController = GameObject.Find("GameController").GetComponent<GameController>();
+		errorFeedback = GameObject.Find("ErrorFeedback").GetComponent<LoginErrorFeedbackController>();
 	}
 
 	public void ButtonLogin(){
@@ -86,13 +88,13 @@ public class LoginController : MonoBehaviour {
 	}
 	private void ErrorHandler(string response){
 		APIError apiError = JsonUtility.FromJson<APIError>(response);
-		Debug.LogError("Ocorreram erros no request: "+ JsonUtility.ToJson(apiError));
+		errorFeedback.SetText("Ocorreram erros no request: "+ apiError.message);
 	}
 	private void NetworkErrorHandler(){
 		attemptToConect++;
 		Debug.Log("Tentativa de conexão "+ attemptToConect +" falhou, tentando até a atentativa " + maxAttemptsToConnect );
 		if(attemptToConect >= maxAttemptsToConnect)
-			Debug.LogError("Ocorreram erros com a rede ao realizer o request");
+			errorFeedback.SetText("Ocorreram erros com a rede ao realizer o request");
 		else
 			StartCoroutine(Login());
 	}
