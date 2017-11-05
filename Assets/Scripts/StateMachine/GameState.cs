@@ -17,7 +17,7 @@ public class GameState : MonoBehaviour {
 	
 	IEnumerator LoginState() {
 		Debug.Log("Login: Enter");
-		//login.SetActive(true);
+		login.SetActive(true);
 		while(state == State.Login) {
 			yield return 0;
 		}
