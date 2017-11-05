@@ -11,11 +11,13 @@ public class LoginController : MonoBehaviour {
 	public int successStatus;
 	public InputField username;
 	public InputField password;
+	public int maxAttemptsToConnect = 2;
 
 
 	private GameController gameController;
 	private bool loggedIn = false;
 	private string userToken;
+	private int attemptToConect = 0;
 
 	void Start()
 	{
@@ -23,6 +25,7 @@ public class LoginController : MonoBehaviour {
 	}
 
 	public void ButtonLogin(){
+		attemptToConect = 0;
 		StartCoroutine(Login());
 	}
 
@@ -65,9 +68,9 @@ public class LoginController : MonoBehaviour {
 
 	private void ResponseHandler(UnityWebRequest response){
 		if(response.isNetworkError){
-			NetworkErrorHandler(response);
+			NetworkErrorHandler();
 		}
-		else if(response.responseCode == successStatus){
+		else if(response.responseCode == 200 || response.responseCode == 201){
 			SuccessHandler(response.downloadHandler.text);
 		}
 		else{
@@ -76,31 +79,36 @@ public class LoginController : MonoBehaviour {
 	}
 
 	private void SuccessHandler(string response){
-		APIResponse apiResponse = JsonUtility.FromJson<APIResponse>(response);
 		if(!loggedIn)
-			LoginHandler(apiResponse);
+			LoginHandler(response);
 		else
-			StatusHandler(apiResponse);
+			StatusHandler(response);
 	}
 	private void ErrorHandler(string response){
-		APIResponse apiResponse = JsonUtility.FromJson<APIResponse>(response);
-		Debug.LogError("Ocorreram erros no request: "+ JsonUtility.ToJson(apiResponse));
+		APIError apiError = JsonUtility.FromJson<APIError>(response);
+		Debug.LogError("Ocorreram erros no request: "+ JsonUtility.ToJson(apiError));
 	}
-	private void NetworkErrorHandler(UnityWebRequest response){
-		APIResponse error = JsonUtility.FromJson<APIResponse>(response.error);
-		Debug.LogError("Ocorreram erros com a rede ao realizer o request: " + error.message);
+	private void NetworkErrorHandler(){
+		attemptToConect++;
+		Debug.Log("Tentativa de conexão "+ attemptToConect +" falhou, tentando até a atentativa " + maxAttemptsToConnect );
+		if(attemptToConect >= maxAttemptsToConnect)
+			Debug.LogError("Ocorreram erros com a rede ao realizer o request");
+		else
+			StartCoroutine(Login());
 	}
-	private void LoginHandler(APIResponse response){
-		userToken = response.token;
+	private void LoginHandler(string response){
+		APILogin apiResponseLogin = JsonUtility.FromJson<APILogin>(response);
+		userToken = apiResponseLogin.token;
 		loggedIn = true;
-		Debug.Log("Usuario logado com sucesso: " + JsonUtility.ToJson(response));
+		Debug.Log("Usuario logado com sucesso: " + JsonUtility.ToJson(apiResponseLogin));
 	}
 
-	private void StatusHandler(APIResponse response){
+	private void StatusHandler(string response){
+		APIStatus apiResponseStatus = JsonUtility.FromJson<APIStatus>(response);
 		User loggedUser = new User();
-		float.TryParse(response.money, out loggedUser.money);
-		loggedUser.nickname = response.nickname;
+		loggedUser.money = apiResponseStatus.money;
+		loggedUser.nickname = apiResponseStatus.nickname;
 		gameController.SetUser(loggedUser);
-		Debug.Log("Status do usuario adquirido com sucesso: " + JsonUtility.ToJson(response));
+		Debug.Log("Status do usuario adquirido com sucesso: " + JsonUtility.ToJson(apiResponseStatus));
 	}
 }
