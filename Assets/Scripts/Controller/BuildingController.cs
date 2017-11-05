@@ -23,7 +23,7 @@ public class BuildingController : MonoBehaviour {
 	private SpriteSlider spriteSlider;
 	private float timer = 0;
 	private float totalTime = 0;
-
+	private ParticleSystem pSystem;
 	void FixedUpdate()
 	{
 		if(timer <= totalTime){
@@ -39,6 +39,7 @@ public class BuildingController : MonoBehaviour {
 		animator = transform.GetComponent<Animator>();
 		audioSource = transform.GetComponent<AudioSource>();
 		spriteSlider = timerSlider.GetComponent<SpriteSlider>();
+		pSystem = transform.GetComponent<ParticleSystem>();
 	}
 
 	void Start () {
@@ -70,6 +71,7 @@ public class BuildingController : MonoBehaviour {
 		audioSource.Stop();
 		buildRenderer.color = readyColor;
 		animator.SetTrigger("Complete");
+		pSystem.Stop();
 		active = true;
 		StartCoroutine(EarnMoney());
 	}

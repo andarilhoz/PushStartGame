@@ -44,7 +44,7 @@ public class Draggable : MonoBehaviour {
 
 		collider.isTrigger = true;
 		collider.size = new Vector2(2.5f, 2.5f);
-		
+		render.sortingLayerName ="Frontlayer";
 		render.sprite = myRender.sprite;
 		dragable.transform.localScale = buildType.prefab.transform.lossyScale;
 		return dragable;
