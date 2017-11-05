@@ -14,9 +14,23 @@ public class BuildingController : MonoBehaviour {
 	public AudioClip buildingSound;
 	public AudioClip moneySound;
 
+	public GameObject timerSlider;
+
 	private GameController gameController;
 	private SpriteRenderer buildRenderer;
 	private Animator animator;
+
+	private SpriteSlider spriteSlider;
+	private float timer = 0;
+	private float totalTime = 0;
+
+	void FixedUpdate()
+	{
+		if(timer <= totalTime){
+			timer += Time.deltaTime;
+			spriteSlider.UpdateBar(timer/totalTime);
+		}
+	}
 
 	void Awake()
 	{
@@ -24,6 +38,7 @@ public class BuildingController : MonoBehaviour {
 		buildRenderer = transform.GetComponent<SpriteRenderer>();
 		animator = transform.GetComponent<Animator>();
 		audioSource = transform.GetComponent<AudioSource>();
+		spriteSlider = timerSlider.GetComponent<SpriteSlider>();
 	}
 
 	void Start () {
@@ -39,6 +54,8 @@ public class BuildingController : MonoBehaviour {
 			coinInstance.GetComponent<CoinController>().gameController = gameController;
 		}
 		audioSource.PlayOneShot(moneySound);
+		timer = 0;
+		totalTime = building.timeToProfit;
 		yield return new WaitForSeconds(building.timeToProfit);
 		StartCoroutine(EarnMoney());
 	}
@@ -47,6 +64,8 @@ public class BuildingController : MonoBehaviour {
 	IEnumerator BuildingIt(){
 		audioSource.clip = buildingSound;
 		audioSource.Play();
+		timer = 0;
+		totalTime = building.timeToBuild;
 		yield return new WaitForSeconds(building.timeToBuild);
 		audioSource.Stop();
 		buildRenderer.color = readyColor;
