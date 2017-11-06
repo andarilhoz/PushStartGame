@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameState : MonoBehaviour {
-
+	
 	public GameObject login;
 	public GameObject game;
 
@@ -36,7 +36,6 @@ public class GameState : MonoBehaviour {
 		Debug.Log("Play: Exited");
 		NextState();
 	}
-
 	IEnumerator PauseState() {
 		Debug.Log("Pause: Enter");
 		Time.timeScale = 0;

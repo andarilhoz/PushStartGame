@@ -3,7 +3,11 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class LoginErrorFeedbackController : MonoBehaviour {
+
+	[Tooltip("Tempo em que a mensagem de erro irá aparecer na tela")]
 	public int timeDisplayError = 3;
+
+	
 	private Text errorText;
 	void Start(){
 		errorText =transform.GetComponent<Text>();

@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ConstructBuilder : MonoBehaviour {
-	public GameObject coinPrefab;
+
+	[Tooltip("Cor da HUD quando usuario tem dinheiro para comprar")]
 	public Color enableColor;
+	[Tooltip("Cor da HUD quando usuario nao tem dinheiro para comprar")]
 	public Color disableColor;
+
+	
 	public Text price;
 
 	private GameObject buildingSpace;

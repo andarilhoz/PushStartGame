@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CameraZoom : MonoBehaviour {
 
+	
 	public float cameraDistanceMax = 13f;
 	public float cameraDistanceMin = 5f;
+	
+	[Tooltip("Distancia inicial da camera")]
 	public float cameraDistance = 5f;
 	public float scrollSpeed = 2f;
 

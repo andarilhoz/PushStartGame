@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteSlider : MonoBehaviour {
-
+	[Header("Objetos do Slider")]
     public GameObject fill;
-    
     public GameObject background;
 
+	[Header("Cores do Slider")]
 	public Color fillColor;
 	public Color backgroundColor;
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AudioController : MonoBehaviour {
+	[Tooltip("Slider controlador do volume")]
 	public Slider sfxSlider;	
 	public GameObject modalVolume;
 

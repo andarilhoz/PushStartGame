@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingController : MonoBehaviour {
+
+	[Tooltip("Tipo da construcao")]
 	public Building building;
-	public bool active;
+
+	[Tooltip("Prefab da moeda gerada")]
 	public GameObject coin;
 
+	[Header("Cores das construcoes construindo e prontas")]
 	public Color constructingColor;
 	public Color readyColor;
 
+	[Header("Propriedades de Audio")]
 	public AudioSource audioSource;
 	public AudioClip buildingSound;
 	public AudioClip moneySound;
 
+	[Tooltip("Timer que marca tempo para construir e gerar dinheiro")]
 	public GameObject timerSlider;
 
 	private GameController gameController;
@@ -24,6 +30,7 @@ public class BuildingController : MonoBehaviour {
 	private float timer = 0;
 	private float totalTime = 0;
 	private ParticleSystem pSystem;
+	private bool active;
 	void FixedUpdate()
 	{
 		if(timer <= totalTime){

@@ -492,7 +492,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335887076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4471016, y: -111.1875, z: 0.53314}
+  m_LocalPosition: {x: -1.4471016, y: 124, z: 0.53314}
   m_LocalScale: {x: 0.6702451, y: 0.6702451, z: 0.6702451}
   m_Children:
   - {fileID: 918933147}
@@ -1052,17 +1052,17 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609176856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 352, y: 129, z: 0}
+  m_LocalPosition: {x: 2, y: -54.699997, z: 0}
   m_LocalScale: {x: 0.5991005, y: 0.5991005, z: 0.5991005}
   m_Children:
   - {fileID: 578149857}
   m_Father: {fileID: 572164123}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 352, y: 129}
-  m_SizeDelta: {x: 87.81, y: 65.07}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -48, y: -104.7}
+  m_SizeDelta: {x: 87.81, y: 65.07001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609176858
 MonoBehaviour:
@@ -1602,7 +1602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ce3e989482d4c4eaba8ab2e45fdf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
   enableColor: {r: 1, g: 1, b: 1, a: 1}
   disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   price: {fileID: 93846774}
@@ -2172,7 +2171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ce3e989482d4c4eaba8ab2e45fdf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
   enableColor: {r: 1, g: 1, b: 1, a: 1}
   disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   price: {fileID: 1096506813}
@@ -2304,7 +2302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ce3e989482d4c4eaba8ab2e45fdf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
   enableColor: {r: 1, g: 1, b: 1, a: 1}
   disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   price: {fileID: 968450246}
@@ -2639,7 +2636,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1294204590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -417.85, y: 260.3875, z: 0}
+  m_LocalPosition: {x: 39.15, y: 25.2, z: 0}
   m_LocalScale: {x: 1.0811998, y: 1.0811998, z: 1.0811998}
   m_Children: []
   m_Father: {fileID: 572164123}
@@ -2732,11 +2729,9 @@ MonoBehaviour:
   APIUrl: http://dev.pushstart.com.br/desafio/public/api
   loginPath: /auth/login
   statusPath: /status
-  successStatus: 200
+  maxAttemptsToConnect: 2
   username: {fileID: 982707333}
   password: {fileID: 2044564646}
-  maxAttemptsToConnect: 2
-  errorFeedback: {fileID: 0}
 --- !u!1 &1335571399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,7 +3486,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627651198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -432.663, y: 185.2875, z: 0}
+  m_LocalPosition: {x: 24.337006, y: -49.9, z: 0}
   m_LocalScale: {x: 0.5752876, y: 0.57528734, z: 0.57528734}
   m_Children:
   - {fileID: 1633022200}
@@ -3823,7 +3818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5f6c25d2f017143bbdd71ab6d5eb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 0
   dragSpeed: 5
   spriteBounds: {fileID: 1577560924}
   dragInvert: 0
@@ -4102,7 +4096,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935123493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 410, y: 241.5875, z: 0}
+  m_LocalPosition: {x: -47, y: 6.399994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1335571400}
@@ -4637,7 +4631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ce3e989482d4c4eaba8ab2e45fdf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
   enableColor: {r: 1, g: 1, b: 1, a: 1}
   disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   price: {fileID: 2142688777}
@@ -4769,7 +4762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ce3e989482d4c4eaba8ab2e45fdf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 1381803279369034, guid: e6f8ece13ef558146b89c638f2aa839d, type: 2}
   enableColor: {r: 1, g: 1, b: 1, a: 1}
   disableColor: {r: 0.32352942, g: 0.32352942, b: 0.32352942, a: 1}
   price: {fileID: 1133848004}

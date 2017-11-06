@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class LoginController : MonoBehaviour {
 
+	[Header("Propriedades da API")]
 	public string APIUrl;
 	public string loginPath;
 	public string statusPath;
-	public int successStatus;
+
+	[Tooltip("Quantidade de tentativas de conexao")]
+	public int maxAttemptsToConnect = 2;
+
+	[Header("Campos de Input")]
 	public InputField username;
 	public InputField password;
-	public int maxAttemptsToConnect = 2;
-	public LoginErrorFeedbackController errorFeedback;
 
-
+	
+	
+	private LoginErrorFeedbackController errorFeedback;
 	private GameController gameController;
 	private bool loggedIn = false;
 	private string userToken;

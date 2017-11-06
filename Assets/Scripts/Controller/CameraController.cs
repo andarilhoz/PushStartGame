@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class CameraController : MonoBehaviour {
 
-	public float width;
+	[Tooltip("Velocidade de movimento da camera")]
     public float dragSpeed = 2;
+
+	[Tooltip("Sprite em que a camera deverá focar")]
 	public  SpriteRenderer spriteBounds;
+	
+	[Tooltip("Modo como a camera sera controlada")]
 	public bool dragInvert = false;
 
 
