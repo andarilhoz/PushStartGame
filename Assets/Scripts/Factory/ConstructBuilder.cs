@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ConstructBuilder : MonoBehaviour {
 	public GameObject coinPrefab;
 	public Color enableColor;
 	public Color disableColor;
-
+	public Text price;
 
 	private GameObject buildingSpace;
 	private Draggable draggable;
@@ -25,6 +26,7 @@ public class ConstructBuilder : MonoBehaviour {
 		draggable = transform.GetComponent<Draggable>();
 		GameController.onLoggedUserChange += ShowMeTheMoney;
 		spriteRenderer = transform.GetComponent<SpriteRenderer>();
+		price.text = buildingEntity.price.ToString();
 	}
 
 	void OnMouseUp(){

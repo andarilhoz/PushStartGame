@@ -39,9 +39,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2232721467
     locked: 0
@@ -50,4 +47,10 @@ TagManager:
     locked: 0
   - name: Frontlayer
     uniqueID: 1737766627
+    locked: 0
+  - name: HUD
+    uniqueID: 4012350541
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
