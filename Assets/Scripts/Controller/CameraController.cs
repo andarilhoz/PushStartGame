@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class CameraController : MonoBehaviour {
 
 	public float width;
@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour {
 	}
     void Update()
     {
+		if(EventSystem.current.IsPointerOverGameObject()) return;
 		if(Draggable.dragging) return;
 		if(Input.touchCount == 2) return;
 
